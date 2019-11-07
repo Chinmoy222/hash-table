@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+struct pair{
+    int value;
+    int key;
+};
+
+void display(struct pair a[],int size){
+    int i;
+    for(i=0;i<size;i++)
+    {
+        printf("%d\t%d\n",a[i].value,a[i].key);
+    }
+}
+
+int main()
+{
+    printf("Hello World\n");
+    int size,i,temp;
+    printf("neter the size of the table\n ");
+    scanf("%d ",&size);
+    struct pair hasht[size];
+    printf("eneter the elements");
+    for(i=0;i<size;++i)
+{
+    scanf("%d",&temp);
+    hasht[temp%size].value = temp ;
+    hasht[temp%size].key = temp%size;
+}
+printf("\n");
+    display(hasht,size);
+    return 0;
+}
